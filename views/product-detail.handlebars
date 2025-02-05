@@ -17,8 +17,9 @@
         <div class="comments-container">
             {{#each productComment}}
             <div class="comment">
-                <h3>{{this.stars}} Avis de {{this.username}}</h3>
-                <p>{{this.comment}}</p>
+                <h2>{{this.stars}}</h2>
+                <h3>Avis de {{this.username}}</h3>
+                <p>"{{this.comment}}"</p>
             </div>
             {{/each}}
         </div>
