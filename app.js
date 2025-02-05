@@ -18,7 +18,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/product', (req, res) => {
-    res.render('product');
+    const products = data.products;
+    res.render('product', { products });
 });
 
 app.get('/product-detail/:id', (req, res) => {
