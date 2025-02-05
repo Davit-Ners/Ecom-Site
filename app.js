@@ -20,6 +20,12 @@ app.get('/product', (req, res) => {
     res.render('product');
 });
 
+app.get('/product-detail/:id', (req, res) => {
+    const id = Number(req.params.id);
+    console.log(id);
+    res.render('product-detail', { layout: 'main' });
+});
+
 
 app.listen(PORT, () => {
     console.log(`Web Server is running on port ${PORT}`);

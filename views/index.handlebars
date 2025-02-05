@@ -17,7 +17,7 @@
         <div class="products-container">
             {{#each dayProducts}}
                 <div class="product">
-                    <h3>{{this.name}}</h3>
+                    <a href="/product-detail/{{this.id}}"><h3>{{this.name}}</h3></a>
                     <div class="image">
                         <img src="{{this.image}}" alt="">
                     </div>
