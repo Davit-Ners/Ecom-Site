@@ -1,0 +1,18 @@
+{
+  "name": "e-com-exo",
+  "version": "0.0.1",
+  "description": "Little exercice for an e-commerce page",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davit Ners",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.1",
+    "express-handlebars": "^8.0.1"
+  }
+}
