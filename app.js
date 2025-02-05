@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.render('index', { dayProducts });
 });
 
+app.get('/product', (req, res) => {
+    res.render('product');
+});
+
 
 app.listen(PORT, () => {
     console.log(`Web Server is running on port ${PORT}`);

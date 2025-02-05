@@ -13,5 +13,19 @@
 
     <div class="day-product">
         <h2>Selection aleatoire de 3 de nos produits, peut-être que vous trouverez votre bonheur !</h2>
+
+        <div class="products-container">
+            {{#each dayProducts}}
+                <div class="product">
+                    <h3>{{this.name}}</h3>
+                    <div class="image">
+                        <img src="{{this.image}}" alt="">
+                    </div>
+                    <p>{{this.price}}€</p>
+                </div>
+            {{/each}}
+        </div>
+
+        <h3><a href="/product">Voir tout nos produits ici</a></h3>
     </div>
 </section>

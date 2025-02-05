@@ -53,7 +53,7 @@
         "name": "Smartphone 5G",
         "price": 699.99,
         "description": "Téléphone haut de gamme avec écran AMOLED et triple capteur photo.",
-        "image": "images/smartphone.jpg",
+        "image": "images/smartphone.jpeg",
         "category": "Mobile"
       },
       {
