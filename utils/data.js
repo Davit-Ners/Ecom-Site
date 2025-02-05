@@ -8,4 +8,18 @@ function getRandomProduct(nb, data) {
     return newData;
 }
 
-export {getRandomProduct};
+function getCommentForProduct(productId, commentData) {
+    const productComment = commentData.filter((comment) => comment.productId == productId);
+    for (let comment of productComment) {
+        let commentStars = '';
+        for (let i = 0; i < comment.stars; i++) {
+            commentStars += '★';
+        }
+        comment.stars = commentStars;
+        console.log(comment);
+    }
+    return productComment;
+}
+
+
+export {getRandomProduct, getCommentForProduct};

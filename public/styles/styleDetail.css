@@ -57,3 +57,21 @@
         background-color: #e35209;
     }
 }
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.comment {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 0.7em;
+    h2 {
+        color: yellow;
+    }
+    p {
+        font-style: italic;
+    }
+}
