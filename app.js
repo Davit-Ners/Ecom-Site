@@ -1,6 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import data from './data.json' with { type: "json" };
+import { getRandomProduct } from './utils/data.js';
 
 const app = express();
 const PORT = 8080;
@@ -11,7 +12,8 @@ app.set('views', './views');
 app.use(express.static('./public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    const dayProducts = getRandomProduct(3, data);
+    res.render('index', { dayProducts });
 });
 
 

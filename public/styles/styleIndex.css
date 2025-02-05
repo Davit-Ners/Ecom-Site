@@ -1,0 +1,35 @@
+.index {
+    background: linear-gradient(to right, #b68633, #f0cb35);
+}
+
+.welcome {
+    margin-bottom: 2em;
+    width: 60%;
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    
+    h2 {
+        font-size: xx-large;
+        font-weight: 800;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    span {
+        font-weight: 800;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 0.5em;
+    }
+}
+
+.day-product {
+    width: 60%;
+    margin-left: 2em;
+    display: flex;
+}
