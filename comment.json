@@ -1,0 +1,245 @@
+{
+    "reviews": [
+      {
+        "username": "Alice Dupont",
+        "stars": 5,
+        "comment": "Superbe qualité sonore et réduction de bruit efficace. Très confortable à porter !",
+        "productId": 1
+      },
+      {
+        "username": "Lucas Martin",
+        "stars": 4,
+        "comment": "Le son est excellent, mais l'autonomie pourrait être un peu meilleure.",
+        "productId": 1
+      },
+      {
+        "username": "Emma Leroy",
+        "stars": 5,
+        "comment": "J'adore cette montre ! Facile à utiliser et très pratique pour le sport.",
+        "productId": 2
+      },
+      {
+        "username": "Julien Moreau",
+        "stars": 4,
+        "comment": "Design élégant et notifications bien visibles, mais autonomie moyenne.",
+        "productId": 2
+      },
+      {
+        "username": "Sophie Garnier",
+        "stars": 5,
+        "comment": "Clavier très réactif avec un rétroéclairage magnifique. Parfait pour le gaming !",
+        "productId": 3
+      },
+      {
+        "username": "Maxime Dubois",
+        "stars": 5,
+        "comment": "Les switchs sont excellents et la sensation de frappe est top.",
+        "productId": 3
+      },
+      {
+        "username": "Nina Lefebvre",
+        "stars": 5,
+        "comment": "Légère et précise, parfaite pour les jeux compétitifs !",
+        "productId": 4
+      },
+      {
+        "username": "Antoine Richard",
+        "stars": 4,
+        "comment": "Bonne ergonomie, mais l'autonomie pourrait être meilleure.",
+        "productId": 4
+      },
+      {
+        "username": "Camille Bernard",
+        "stars": 5,
+        "comment": "Image ultra nette, couleurs superbes et très fluide pour les jeux.",
+        "productId": 5
+      },
+      {
+        "username": "David Fontaine",
+        "stars": 4,
+        "comment": "Très bon écran, mais le pied aurait pu être plus ajustable.",
+        "productId": 5
+      },
+      {
+        "username": "Claire Thomas",
+        "stars": 5,
+        "comment": "Installation facile et vitesse incroyable, mon PC démarre en un éclair !",
+        "productId": 6
+      },
+      {
+        "username": "Hugo Pelletier",
+        "stars": 5,
+        "comment": "Très bon rapport qualité-prix, performances au top.",
+        "productId": 6
+      },
+      {
+        "username": "Elodie Marchand",
+        "stars": 5,
+        "comment": "Écran magnifique et très rapide, la fluidité est parfaite !",
+        "productId": 7
+      },
+      {
+        "username": "Paul Girard",
+        "stars": 4,
+        "comment": "Super smartphone, mais un peu cher.",
+        "productId": 7
+      },
+      {
+        "username": "Marine Lefevre",
+        "stars": 5,
+        "comment": "Parfaite pour le streaming et les films, super autonomie.",
+        "productId": 8
+      },
+      {
+        "username": "Vincent Morel",
+        "stars": 4,
+        "comment": "Bonne tablette, mais un peu lourde.",
+        "productId": 8
+      },
+      {
+        "username": "Chloé Laurent",
+        "stars": 5,
+        "comment": "Son puissant et basses impressionnantes pour la taille !",
+        "productId": 9
+      },
+      {
+        "username": "Léo Mercier",
+        "stars": 4,
+        "comment": "Bonne enceinte, mais l'autonomie pourrait être un peu meilleure.",
+        "productId": 9
+      },
+      {
+        "username": "Sébastien Rousseau",
+        "stars": 5,
+        "comment": "Une immersion totale en VR, je recommande fortement !",
+        "productId": 10
+      },
+      {
+        "username": "Laura Dupuis",
+        "stars": 4,
+        "comment": "Super expérience, mais un peu lourd sur la tête après un long usage.",
+        "productId": 10
+      },
+      {
+        "username": "Jérôme Blanc",
+        "stars": 5,
+        "comment": "Son clair et professionnel, idéal pour le streaming.",
+        "productId": 11
+      },
+      {
+        "username": "Isabelle Noel",
+        "stars": 5,
+        "comment": "Très bon micro, facile à installer.",
+        "productId": 11
+      },
+      {
+        "username": "Olivier Henry",
+        "stars": 5,
+        "comment": "Image nette et fluide, parfait pour les réunions.",
+        "productId": 12
+      },
+      {
+        "username": "Sophie Renaud",
+        "stars": 4,
+        "comment": "Bonne webcam, mais l'autofocus est un peu lent parfois.",
+        "productId": 12
+      },
+      {
+        "username": "Jonathan Moulin",
+        "stars": 5,
+        "comment": "Charge très rapide et super pratique.",
+        "productId": 13
+      },
+      {
+        "username": "Eva Lambert",
+        "stars": 5,
+        "comment": "Fonctionne parfaitement, même avec une coque épaisse.",
+        "productId": 13
+      },
+      {
+        "username": "Céline Boucher",
+        "stars": 5,
+        "comment": "Autonomie impressionnante, recharge mes appareils plusieurs fois.",
+        "productId": 14
+      },
+      {
+        "username": "Mathieu Faure",
+        "stars": 5,
+        "comment": "Compacte et très puissante, un indispensable !",
+        "productId": 14
+      },
+      {
+        "username": "Théo Perrin",
+        "stars": 5,
+        "comment": "Super design et parfait pour les longues sessions de jeu.",
+        "productId": 15
+      },
+      {
+        "username": "Caroline Lefort",
+        "stars": 5,
+        "comment": "Le RGB est magnifique, et la texture est agréable.",
+        "productId": 15
+      },
+      {
+        "username": "Alexandre Collin",
+        "stars": 5,
+        "comment": "Facile à installer et super qualité d’image.",
+        "productId": 16
+      },
+      {
+        "username": "Lucie Guerin",
+        "stars": 4,
+        "comment": "Bonne caméra, mais l’application pourrait être améliorée.",
+        "productId": 16
+      },
+      {
+        "username": "Thomas Roy",
+        "stars": 5,
+        "comment": "Son clair et bonne autonomie, parfait pour le sport.",
+        "productId": 17
+      },
+      {
+        "username": "Margaux Andre",
+        "stars": 5,
+        "comment": "Très confortables et légers.",
+        "productId": 17
+      },
+      {
+        "username": "Manon Denis",
+        "stars": 5,
+        "comment": "Très pratique, un vrai plus pour la maison connectée.",
+        "productId": 18
+      },
+      {
+        "username": "Bastien Rey",
+        "stars": 5,
+        "comment": "Tout fonctionne parfaitement, hyper simple à configurer.",
+        "productId": 18
+      },
+      {
+        "username": "Damien Chauvet",
+        "stars": 5,
+        "comment": "Impressions précises et rapides, au top !",
+        "productId": 19
+      },
+      {
+        "username": "Nathalie Perrot",
+        "stars": 5,
+        "comment": "Montage simple et résultat impeccable.",
+        "productId": 19
+      },
+      {
+        "username": "Axel Durand",
+        "stars": 5,
+        "comment": "Super ambiance, les couleurs sont magnifiques.",
+        "productId": 20
+      },
+      {
+        "username": "Elise Barre",
+        "stars": 5,
+        "comment": "Connectée à Alexa, ça change la vie !",
+        "productId": 20
+      }
+    ]
+  }
+  

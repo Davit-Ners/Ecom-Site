@@ -1,3 +1,26 @@
 <section>
-    ici
+    <div class="product-container">
+        <div class="product-detail">
+            <h2>{{product.name}}</h2>
+
+            <div class="image-detail">
+                <img src="/{{product.image}}" alt="">
+            </div>
+
+            <p>{{product.description}}</p>
+
+            <p>{{product.price}}€</p>
+
+            <button id="addToCart"><img src="/images/panier.png">Ajouter au panier</button>
+        </div>
+
+        <div class="comments-container">
+            {{#each productComment}}
+            <div class="comment">
+                <h3>{{this.stars}} Avis de {{this.username}}</h3>
+                <p>{{this.comment}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </section>

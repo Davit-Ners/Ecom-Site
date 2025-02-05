@@ -1,6 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import data from './data.json' with { type: "json" };
+import commentData from './comment.json' with { type: "json" };
 import { getRandomProduct } from './utils/data.js';
 
 const app = express();
@@ -21,9 +22,10 @@ app.get('/product', (req, res) => {
 });
 
 app.get('/product-detail/:id', (req, res) => {
-    const id = Number(req.params.id);
-    console.log(id);
-    res.render('product-detail', { layout: 'main' });
+    const productId = Number(req.params.id);
+    const product = data.products.filter((elem) => elem.id == productId)[0];
+    const productComment = commentData.reviews.filter((comment) => comment.productId == productId);
+    res.render('product-detail', { product, productComment });
 });
 
 
