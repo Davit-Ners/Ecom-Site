@@ -1,0 +1,23 @@
+<h2 id="confirmation-message"></h2>
+
+<script>
+    const message = document.getElementById('confirmation-message');
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function redirection() {
+        let timer = 5;
+        message.textContent = `Votre formulaire a bien été envoyé, vous serez redirigé dans ${timer} secondes`;
+        for (let i = 0; i < 5; i++) {
+            await delay(1000);
+            timer--;
+            message.textContent = `Votre formulaire a bien été envoyé, vous serez redirigé dans ${timer} secondes`;
+        }
+        window.location.href = "/";
+    }
+
+    redirection();
+
+</script>

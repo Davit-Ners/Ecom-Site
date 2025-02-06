@@ -12,6 +12,8 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.static('./public'));
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
     const dayProducts = getRandomProduct(3, data);
     res.render('index', { dayProducts });
@@ -31,6 +33,19 @@ app.get('/product-detail/:id', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact');
+});
+
+app.get('/confirmation', (req, res) => {
+    res.render('confirmation');
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    if(req.body.email && req.body.message) res.redirect('/confirmation');
+    else {
+        res.status(200).render('contact', { error: 'Veuillez completer le formulaire !'});
+        return;
+    }
 });
 
 

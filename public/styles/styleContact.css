@@ -1,8 +1,13 @@
 .contact-page {
     padding: 2em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0.5em;
+    h3 {
+        color: red;
+    }
 }
 
 form {
@@ -45,5 +50,12 @@ form {
         padding: 0.5em;
         border-radius: 10px;
         background-color: rgb(226, 165, 73);
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            background-color: #e45315;
+        }
     }
 }

@@ -1,16 +1,20 @@
 <section class="contact-page">
 
+    {{#if error}}
+        <h3>{{error}}</h3>
+    {{/if}}
+
     <form method="post">
         <h2>Contactez nous ici</h2>
 
         <div>
             <label for="email">Adresse E-Mail *</label>
-            <input id="email" type="email">
+            <input id="email" name="email" type="email">
         </div>
 
         <div>
             <label for="pseudo">Pseudonyme</label>
-            <input id="pseudo" type="text">
+            <input id="pseudo" name="pseudo" type="text">
         </div>
 
         <div>      
