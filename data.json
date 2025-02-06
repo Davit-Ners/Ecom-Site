@@ -5,7 +5,7 @@
         "name": "Casque Bluetooth",
         "price": 89.99,
         "description": "Casque sans fil avec réduction de bruit active et autonomie de 20h.",
-        "image": "images/casque.jpeg",
+        "image": "images/casque.png",
         "category": "Audio"
       },
       {
@@ -13,7 +13,7 @@
         "name": "Montre Connectée",
         "price": 129.99,
         "description": "Montre intelligente avec suivi de la fréquence cardiaque et notifications.",
-        "image": "images/montre.jpg",
+        "image": "images/montre.png",
         "category": "Wearable"
       },
       {
@@ -21,7 +21,7 @@
         "name": "Clavier Mécanique RGB",
         "price": 79.99,
         "description": "Clavier gaming mécanique avec rétroéclairage RGB et switchs réactifs.",
-        "image": "images/clavier.jpg",
+        "image": "images/clavier.png",
         "category": "Gaming"
       },
       {
@@ -29,7 +29,7 @@
         "name": "Souris Gamer Sans Fil",
         "price": 49.99,
         "description": "Souris ergonomique avec capteur optique haute précision et RGB personnalisable.",
-        "image": "images/souris.jpg",
+        "image": "images/souris.png",
         "category": "Gaming"
       },
       {
@@ -37,7 +37,7 @@
         "name": "Écran 4K 27 pouces",
         "price": 299.99,
         "description": "Moniteur UHD 4K avec technologie anti-lumière bleue et taux de rafraîchissement 144Hz.",
-        "image": "images/ecran.jpg",
+        "image": "images/ecran.png",
         "category": "Informatique"
       },
       {
@@ -45,7 +45,7 @@
         "name": "SSD NVMe 1TB",
         "price": 109.99,
         "description": "Stockage ultra-rapide pour booster les performances de ton PC.",
-        "image": "images/ssd.jpg",
+        "image": "images/ssd.png",
         "category": "Informatique"
       },
       {
@@ -53,7 +53,7 @@
         "name": "Smartphone 5G",
         "price": 699.99,
         "description": "Téléphone haut de gamme avec écran AMOLED et triple capteur photo.",
-        "image": "images/smartphone.jpeg",
+        "image": "images/smartphone.png",
         "category": "Mobile"
       },
       {
@@ -61,7 +61,7 @@
         "name": "Tablette 10 pouces",
         "price": 349.99,
         "description": "Tablette performante avec écran Full HD et batterie longue durée.",
-        "image": "images/tablette.jpg",
+        "image": "images/tablette.png",
         "category": "Mobile"
       },
       {
@@ -69,7 +69,7 @@
         "name": "Enceinte Bluetooth",
         "price": 59.99,
         "description": "Enceinte portable avec basses puissantes et autonomie de 15h.",
-        "image": "images/enceinte.jpeg",
+        "image": "images/enceinte.png",
         "category": "Audio"
       },
       {
@@ -77,7 +77,7 @@
         "name": "Casque VR",
         "price": 399.99,
         "description": "Plonge dans la réalité virtuelle avec un champ de vision immersif.",
-        "image": "images/casque.jpg",
+        "image": "images/casque.png",
         "category": "Gaming"
       },
       {
@@ -85,7 +85,7 @@
         "name": "Microphone USB",
         "price": 99.99,
         "description": "Micro cardioïde idéal pour le streaming et les enregistrements.",
-        "image": "images/micro.jpg",
+        "image": "images/micro.png",
         "category": "Audio"
       },
       {
@@ -93,7 +93,7 @@
         "name": "Webcam Full HD",
         "price": 69.99,
         "description": "Webcam 1080p avec autofocus et réduction du bruit pour les appels vidéo.",
-        "image": "images/webcam.jpg",
+        "image": "images/webcam.png",
         "category": "Informatique"
       },
       {
@@ -101,7 +101,7 @@
         "name": "Chargeur sans fil",
         "price": 29.99,
         "description": "Chargeur induction rapide compatible avec tous les smartphones Qi.",
-        "image": "images/chargeur.jpg",
+        "image": "images/chargeur.png",
         "category": "Accessoires"
       },
       {
@@ -109,7 +109,7 @@
         "name": "Batterie Externe 20000mAh",
         "price": 39.99,
         "description": "Recharge plusieurs appareils avec une autonomie énorme.",
-        "image": "images/batterie.jpg",
+        "image": "images/batterie.png",
         "category": "Accessoires"
       },
       {
@@ -117,7 +117,7 @@
         "name": "Tapis de souris XXL RGB",
         "price": 24.99,
         "description": "Tapis de souris large avec éclairage RGB personnalisable.",
-        "image": "images/tapis.jpg",
+        "image": "images/tapis.png",
         "category": "Gaming"
       },
       {
@@ -125,7 +125,7 @@
         "name": "Caméra de sécurité WiFi",
         "price": 79.99,
         "description": "Caméra connectée avec vision nocturne et détection de mouvement.",
-        "image": "images/camera.jpg",
+        "image": "images/camera.png",
         "category": "Domotique"
       },
       {
@@ -133,7 +133,7 @@
         "name": "Écouteurs sans fil",
         "price": 49.99,
         "description": "Écouteurs Bluetooth avec réduction de bruit et boîtier de charge.",
-        "image": "images/ecouteurs.jpg",
+        "image": "images/ecouteurs.png",
         "category": "Audio"
       },
       {
@@ -141,7 +141,7 @@
         "name": "Box domotique",
         "price": 129.99,
         "description": "Contrôle ta maison avec une centrale domotique connectée.",
-        "image": "images/box.jpeg",
+        "image": "images/box.png",
         "category": "Domotique"
       },
       {
@@ -149,7 +149,7 @@
         "name": "Imprimante 3D",
         "price": 249.99,
         "description": "Imprimante 3D haute précision pour tes créations et prototypes.",
-        "image": "images/imprimante3d.jpg",
+        "image": "images/imprimante3d.png",
         "category": "Informatique"
       },
       {
@@ -157,7 +157,7 @@
         "name": "Lampe LED connectée",
         "price": 19.99,
         "description": "Lampe intelligente avec couleurs personnalisables et commande vocale.",
-        "image": "images/lampe.jpg",
+        "image": "images/lampe.png",
         "category": "Domotique"
       }
     ]
