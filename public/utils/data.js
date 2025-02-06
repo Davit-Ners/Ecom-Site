@@ -1,3 +1,5 @@
+import fs from 'fs/promises';
+
 function getRandomProduct(nb, data) {
     const newData = [];
     for (let i = 0; i < nb; i++) {
@@ -21,5 +23,10 @@ function getCommentForProduct(productId, commentData) {
     return productComment;
 }
 
+function addCardJson(product, data) {
+    const test = fs.readFile(data.product);
+    console.log(test);
+}
 
-export {getRandomProduct, getCommentForProduct};
+
+export {getRandomProduct, getCommentForProduct, addCardJson};

@@ -7,8 +7,18 @@ function addToCart(productId) {
     const product = data.products.find(elem => elem.id == productId);
     panier.push(product);
     console.log(panier);
+
+    const text = document.createElement('textarea');
+    text.name = 'productInfos';
+    text.value = product;
+
+    document.getElementById('formCart').append(text);
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 };
 
-addToCartBtn.addEventListener('click', () => {
-    addToCart(Number(addToCartBtn.parentElement.id[addToCartBtn.parentElement.id.length - 1]));
-});
+if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', () => {
+        addToCart(Number(addToCartBtn.parentElement.id[addToCartBtn.parentElement.id.length - 1]));
+    });
+}

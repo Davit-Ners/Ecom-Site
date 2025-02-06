@@ -2,7 +2,7 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import data from './data.json' with { type: "json" };
 import commentData from './comment.json' with { type: "json" };
-import { getRandomProduct } from './utils/data.js';
+import { getRandomProduct } from './public/utils/data.js';
 
 const app = express();
 const PORT = 8080;
@@ -50,6 +50,14 @@ app.post('/contact', (req, res) => {
 
 app.get('/panier', (req, res) => {
     res.render('panier');
+});
+
+app.post('/ajouter-panier', (req, res) => {
+    const panier = req.body.panier;
+    console.log('Panier reçu:', panier);
+
+    // Réponse au client
+    res.json({ message: 'Panier ajouté avec succès', panier });
 });
 
 
