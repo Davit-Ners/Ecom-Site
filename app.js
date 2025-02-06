@@ -48,6 +48,10 @@ app.post('/contact', (req, res) => {
     }
 });
 
+app.get('/panier', (req, res) => {
+    res.render('panier');
+});
+
 
 app.listen(PORT, () => {
     console.log(`Web Server is running on port ${PORT}`);
