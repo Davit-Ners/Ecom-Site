@@ -29,6 +29,10 @@ app.get('/product-detail/:id', (req, res) => {
     res.render('product-detail', { product, productComment });
 });
 
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
+
 
 app.listen(PORT, () => {
     console.log(`Web Server is running on port ${PORT}`);

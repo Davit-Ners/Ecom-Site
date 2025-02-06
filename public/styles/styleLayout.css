@@ -6,6 +6,10 @@
 margin: 0;
 }
 
+body {
+    background: linear-gradient(to right, #b68633, #f0cb35);
+}
+
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;

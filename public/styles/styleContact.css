@@ -1,0 +1,49 @@
+.contact-page {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    h2 {
+        font-size: xx-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border: 5px solid orange;
+        border-radius: 15px;
+        padding: 0.5em;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border: 5px solid orange;
+    padding: 2em;
+    gap: 1em;
+    position: relative;
+
+    textarea {
+        resize: none;
+        width: 400px;
+        height: 300px;
+    }
+
+    div {
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        border: 3px solid rgb(255, 132, 0);
+        padding: 0.5em;
+        border-radius: 10px;
+        background-color: rgb(226, 165, 73);
+    }
+}
