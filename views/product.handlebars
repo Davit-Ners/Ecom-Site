@@ -1,3 +1,14 @@
 <section class="product-page">
-    hello
+    <div class="product-page-container">
+        {{#each products}}
+            <div class="product-card">
+                <h2>{{this.name}}</h2>
+                <div class="product-page-image">
+                    <img src="/{{this.image}}" alt="image de {{this.name}}">
+                </div>
+                <h3>{{this.price}}</h3>
+                <a href="/product-detail/{{this.id}}">Plus d'infos ici</a>
+            </div>
+        {{/each}}
+    </div>
 </section>
