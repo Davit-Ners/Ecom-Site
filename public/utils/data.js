@@ -28,5 +28,24 @@ function addCardJson(product, data) {
     console.log(test);
 }
 
+function getCart(productIds, data) {
+    const panier = [];
+    for (let id of productIds) {
+        const product = data.products.find((elem) => elem.id == id);
+        panier.push(product);
+    }
+    return panier;
+}
 
-export {getRandomProduct, getCommentForProduct, addCardJson};
+function getTotaPrice(panier) {
+    let totalPrice = 0;
+
+    for (let product of panier) {
+        totalPrice += Number(product.price);
+    }
+
+    return totalPrice;
+}
+
+
+export {getRandomProduct, getCommentForProduct, addCardJson, getCart, getTotaPrice};

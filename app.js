@@ -2,7 +2,7 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import data from './data.json' with { type: "json" };
 import commentData from './comment.json' with { type: "json" };
-import { getRandomProduct } from './public/utils/data.js';
+import { getCart, getRandomProduct, getTotaPrice } from './public/utils/data.js';
 
 const app = express();
 const PORT = 8080;
@@ -50,7 +50,10 @@ app.post('/contact', (req, res) => {
 });
 
 app.get('/panier', (req, res) => {
-    res.render('panier');
+    const cartToRender = getCart(CART,data);
+    const totalPrice = getTotaPrice(cartToRender);
+    console.log(cartToRender, totalPrice);
+    res.render('panier', { cartToRender, totalPrice });
 });
 
 app.post('/product-detail/:id', (req, res) => {

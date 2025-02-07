@@ -1,3 +1,23 @@
 <section class="cart-section">
-    cart
+    <div class="cartDisplay">
+        <div class="panierTitre">
+            <h1>Votre Panier</h1>
+            <img src="/images/panier.png" alt="">
+        </div>
+        {{#if totalPrice}}
+            {{#each cartToRender}}
+            <div class="cart-card">
+                <img src="/{{this.image}}" alt="">
+                <div class="cart-card-detail">
+                    <h3>{{this.name}}</h3>
+                    <p>{{this.price}}€</p>
+                </div>
+                <button>Retirer du panier</button>
+            </div>
+            {{/each}}
+            <p class="totalPrice">Total: {{totalPrice}}€</p>
+            {{else}}
+            <p>Le panier est vide</p>
+        {{/if}}
+    </div>
 </section>

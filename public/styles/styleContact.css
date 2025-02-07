@@ -28,10 +28,23 @@
     gap: 1em;
     position: relative;
 
+    input {
+        background-color: rgb(226, 165, 73);
+    }
+
+    select {
+        background-color: rgb(226, 165, 73);
+    }
+
     textarea {
         resize: none;
         width: 400px;
         height: 300px;
+        background-color: rgb(226, 165, 73);
+
+        &:focus {
+            outline: none;
+        }
     }
 
     div {
