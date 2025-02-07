@@ -39,8 +39,8 @@
         text-align: center;
         font-weight: 700;
         text-transform: uppercase;
-        background: linear-gradient(90deg, #fcac54, #e45315);
-        color: white;
+        background-color: #c1c9d1;
+        color: #292c2c;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -82,8 +82,8 @@
         font-weight: bold;
         padding: 0.8em 1.5em;
         border-radius: 10px;
-        background: linear-gradient(90deg, #e45315, #d23c0a);
-        color: white;
+        background-color: #c1c9d1;
+        color: #292c2c;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
