@@ -79,3 +79,7 @@
         font-style: italic;
     }
 }
+
+#productIdDetail {
+    display: none;
+}

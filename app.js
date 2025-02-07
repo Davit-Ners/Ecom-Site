@@ -6,6 +6,7 @@ import { getRandomProduct } from './public/utils/data.js';
 
 const app = express();
 const PORT = 8080;
+const CART = [];
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
@@ -52,12 +53,11 @@ app.get('/panier', (req, res) => {
     res.render('panier');
 });
 
-app.post('/ajouter-panier', (req, res) => {
-    const panier = req.body.panier;
-    console.log('Panier reçu:', panier);
-
-    // Réponse au client
-    res.json({ message: 'Panier ajouté avec succès', panier });
+app.post('/product-detail/:id', (req, res) => {
+    const product = req.body.id;
+    CART.push(product);
+    console.log('Produit reçu:', product, CART);
+    res.redirect('/panier');
 });
 
 
