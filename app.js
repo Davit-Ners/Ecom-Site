@@ -2,10 +2,11 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import data from './data.json' with { type: "json" };
 import commentData from './comment.json' with { type: "json" };
-import { getCart, getRandomProduct, getTotaPrice } from './public/utils/data.js';
+import homeRouter from './routers/home.router.js';
+import productRouter from './routers/products.router.js';
 
 const app = express();
-const PORT = 8080;
+const {NODE_ENV, PORT} = process.env;
 const CART = [];
 
 app.engine('handlebars', engine());
@@ -15,55 +16,58 @@ app.use(express.static('./public'));
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    const dayProducts = getRandomProduct(3, data);
-    res.render('index', { dayProducts });
-});
+app.use(homeRouter);
+app.use(productRouter);
 
-app.get('/product', (req, res) => {
-    const products = data.products;
-    res.render('product', { products });
-});
+// app.get('/', (req, res) => {
+//     const dayProducts = getRandomProduct(3, data);
+//     res.render('index', { dayProducts });
+// });
 
-app.get('/product-detail/:id', (req, res) => {
-    const productId = Number(req.params.id);
-    const product = data.products.filter((elem) => elem.id == productId)[0];
-    const productComment = commentData.reviews.filter((comment) => comment.productId == productId);
-    res.render('product-detail', { product, productComment });
-});
+// app.get('/product', (req, res) => {
+//     const products = data.products;
+//     res.render('product', { products });
+// });
 
-app.get('/contact', (req, res) => {
-    res.render('contact');
-});
+// app.get('/product-detail/:id', (req, res) => {
+//     const productId = Number(req.params.id);
+//     const product = data.products.filter((elem) => elem.id == productId)[0];
+//     const productComment = commentData.reviews.filter((comment) => comment.productId == productId);
+//     res.render('product-detail', { product, productComment });
+// });
 
-app.get('/confirmation', (req, res) => {
-    res.render('confirmation');
-});
+// app.get('/contact', (req, res) => {
+//     res.render('contact');
+// });
 
-app.post('/contact', (req, res) => {
-    console.log(req.body);
-    if(req.body.email && req.body.message) res.redirect('/confirmation');
-    else {
-        res.status(200).render('contact', { error: 'Veuillez completer le formulaire !'});
-        return;
-    }
-});
+// app.get('/confirmation', (req, res) => {
+//     res.render('confirmation');
+// });
 
-app.get('/panier', (req, res) => {
-    const cartToRender = getCart(CART,data);
-    const totalPrice = getTotaPrice(cartToRender);
-    console.log(cartToRender, totalPrice);
-    res.render('panier', { cartToRender, totalPrice });
-});
+// app.post('/contact', (req, res) => {
+//     console.log(req.body);
+//     if(req.body.email && req.body.message) res.redirect('/confirmation');
+//     else {
+//         res.status(200).render('contact', { error: 'Veuillez completer le formulaire !'});
+//         return;
+//     }
+// });
 
-app.post('/product-detail/:id', (req, res) => {
-    const product = req.body.id;
-    CART.push(product);
-    console.log('Produit reçu:', product, CART);
-    res.redirect('/panier');
-});
+// app.get('/panier', (req, res) => {
+//     const cartToRender = getCart(CART,data);
+//     const totalPrice = getTotaPrice(cartToRender);
+//     console.log(cartToRender, totalPrice);
+//     res.render('panier', { cartToRender, totalPrice });
+// });
+
+// app.post('/product-detail/:id', (req, res) => {
+//     const product = req.body.id;
+//     CART.push(product);
+//     console.log('Produit reçu:', product, CART);
+//     res.redirect('/panier');
+// });
 
 
-app.listen(PORT, () => {
-    console.log(`Web Server is running on port ${PORT}`);
+app.listen(8080, () => {
+    console.log(`Web Server is running on port ${8080}`);
 });
