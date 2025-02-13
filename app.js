@@ -4,6 +4,7 @@ import data from './data.json' with { type: "json" };
 import commentData from './comment.json' with { type: "json" };
 import homeRouter from './routers/home.router.js';
 import productRouter from './routers/products.router.js';
+import contactRouter from './routers/contact.router.js';
 
 const app = express();
 const {NODE_ENV, PORT} = process.env;
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(homeRouter);
 app.use(productRouter);
+app.use(contactRouter);
 
 // app.get('/', (req, res) => {
 //     const dayProducts = getRandomProduct(3, data);
