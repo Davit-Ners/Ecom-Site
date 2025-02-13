@@ -4,12 +4,16 @@ const cartService = {
 
     getAll: () => {
         const cart = cartModel.getAll();
-        return cart;
+        return structuredClone(cart);
     },
 
     getTotalPrice: () => {
-        const totalPrice = cartModel.getTotalPrice();
+        const totalPrice = Math.round(cartModel.getTotalPrice()*100) / 100;
         return totalPrice;
+    },
+
+    add: (productId) => {
+        const newProduct = cartModel.add(productId);
     }
     
 }
