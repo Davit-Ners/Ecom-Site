@@ -6,6 +6,11 @@ const productService = {
     getAll: () => {
         const product = productModel.getAll();
         return product;
+    },
+
+    getRandomProduct: (nb) => {
+        const products = productModel.getRandomProduct(nb);
+        return products;
     }
 
 }

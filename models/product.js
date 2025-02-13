@@ -29,7 +29,7 @@ const productModel = {
     getRandomProduct: (nb) => {
         const newData = [];
         for (let i = 0; i < nb; i++) {
-            const random = Math.floor(Math.random() * data.products.length);
+            const random = Math.floor(Math.random() * context.products.length);
             if (newData.includes(data.products[random])) i--;
             else {newData.push(data.products[random]);}
         }

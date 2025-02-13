@@ -1,5 +1,6 @@
 import express from 'express';
 import productModel from '../models/product.js';
+import productService from '../services/product.service.js';
 const homeController = {
 
     /**
@@ -8,8 +9,9 @@ const homeController = {
      * @param {express.Response} res 
      */
     index: (req, res) => {
-        const randomProducts = productModel.getRandomProduct(3);
-        res.render('home/index');
+        const dayProducts = productService.getRandomProduct(3);
+        console.log(dayProducts);
+        res.render('home/index', { dayProducts });
     },
     
 
