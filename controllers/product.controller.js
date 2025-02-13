@@ -12,6 +12,13 @@ const productController = {
         const products = productService.getAll();
         res.render('products/product', { products });
     },
+
+    details: (req, res) => {
+        const id = req.params.id;
+        const product = productService.getById(id);
+        const productComment = productService.getComments(id);
+        res.render('products/product-detail', { product, productComment });
+    }
     
 
 

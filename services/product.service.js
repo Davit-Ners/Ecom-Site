@@ -11,6 +11,16 @@ const productService = {
     getRandomProduct: (nb) => {
         const products = productModel.getRandomProduct(nb);
         return products;
+    },
+
+    getById: (id) => {
+        const product = productModel.getById(id);
+        return product;
+    },
+
+    getComments: (id) => {
+        const comments = productModel.getComments(id);
+        return comments;
     }
 
 }

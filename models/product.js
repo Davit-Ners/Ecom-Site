@@ -1,7 +1,10 @@
 import data from '../data.json' with { type: 'json' };
+import comments from '../comment.json' with { type: 'json' };
+
 const context = {
     products: data.products,
-    nextId: 21
+    nextId: 21,
+    comments: comments.reviews
 };
 
 const productModel = {
@@ -10,8 +13,9 @@ const productModel = {
         return structuredClone(context.products);
     },
 
-    getById: () => {
-
+    getById: (id) => {
+        const product = context.products.find(p => p.id == id);
+        return structuredClone(product);
     },
 
     add: () => {
@@ -34,6 +38,11 @@ const productModel = {
             else {newData.push(data.products[random]);}
         }
         return newData;
+    },
+
+    getComments: (id) => {
+        const productComments = context.comments.filter(c => c.productId == id);
+        return structuredClone(productComments);
     }
 
 }
