@@ -1,5 +1,5 @@
 import express from 'express';
-import productModel from '../models/product';
+import productModel from '../models/product.js';
 const homeController = {
 
     /**

@@ -1,4 +1,6 @@
 import express from 'express';
+import productModel from '../models/product.js';
+import productService from '../services/product.service.js';
 const productController = {
 
     /**
@@ -7,7 +9,8 @@ const productController = {
      * @param {express.Response} res 
      */
     index: (req, res) => {
-        res.render('products/product');
+        const products = productService.getAll();
+        res.render('products/product', { products });
     },
     
 

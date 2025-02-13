@@ -1,9 +1,13 @@
 import data from '../data.json' with { type: 'json' };
+const context = {
+    products: data.products,
+    nextId: 21
+};
 
 const productModel = {
     
     getAll: () => {
-
+        return structuredClone(context.products);
     },
 
     getById: () => {
