@@ -17,7 +17,8 @@ const productController = {
         const id = req.params.id;
         const product = productService.getById(id);
         const productComment = productService.getComments(id);
-        res.render('products/product-detail', { product, productComment });
+        const script = 'product.details.js';
+        res.render('products/product-detail', { product, productComment, script });
     }
     
 
