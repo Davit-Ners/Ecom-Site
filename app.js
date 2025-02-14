@@ -1,5 +1,6 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
+import session from 'express-session';
 import data from './data.json' with { type: "json" };
 import commentData from './comment.json' with { type: "json" };
 import homeRouter from './routers/home.router.js';
@@ -9,7 +10,7 @@ import cartRouter from './routers/cart.router.js';
 import authRouter from './routers/auth.router.js';
 
 const app = express();
-const {NODE_ENV, PORT} = process.env;
+const {NODE_ENV, PORT, SESSION_SECRET} = process.env;
 const CART = [];
 
 app.engine('handlebars', engine());
@@ -18,6 +19,17 @@ app.set('views', './views');
 app.use(express.static('./public'));
 
 app.use(express.urlencoded({ extended: true }));
+
+//- Session
+app.use(session({
+    secret: SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true,
+}));
+app.use((req, res, next) => {
+    res.locals.session = req.session;
+    next();
+});
 
 app.use(homeRouter);
 app.use(productRouter);
@@ -74,6 +86,6 @@ app.use(authRouter);
 // });
 
 
-app.listen(8080, () => {
-    console.log(`Web Server is running on port ${8080}`);
+app.listen(PORT, () => {
+    console.log(`Web Server is running on port ${PORT}`);
 });

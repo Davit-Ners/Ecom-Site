@@ -10,7 +10,6 @@ const homeController = {
      */
     index: (req, res) => {
         const dayProducts = productService.getRandomProduct(3);
-        console.log(dayProducts);
         res.render('home/index', { dayProducts });
     },
     
