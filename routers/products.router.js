@@ -5,5 +5,6 @@ const productRouter = Router();
 
 productRouter.get('/product', productController.index);
 productRouter.get('/product-detail/:id', productController.details);
+productRouter.post('/product/addComment', productController.addComment);
 
 export default productRouter;

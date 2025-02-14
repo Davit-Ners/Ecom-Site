@@ -21,6 +21,17 @@ const productService = {
     getComments: (id) => {
         const comments = productModel.getComments(id);
         return comments;
+    },
+
+    addComment: (username, stars, comment, idProduct) => {
+        let starsString = '';
+        for (let i = 0; i < parseInt(stars); i++) {
+            starsString += '★';
+        }
+
+        const productId = productModel.addComment(username, starsString, comment, idProduct);
+
+        return productId;
     }
 
 }

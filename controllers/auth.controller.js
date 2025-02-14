@@ -27,7 +27,7 @@ const authController = {
         if (user != 1 && user != -1) {
             req.session.user = {
                 id: user.id,
-                username
+                username: username
             };
             req.session.isConnected = true;
 

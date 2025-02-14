@@ -19,6 +19,31 @@ const productController = {
         const productComment = productService.getComments(id);
         const script = 'product.details.js';
         res.render('products/product-detail', { product, productComment, script });
+    },
+
+    addComment: (req, res) => {
+        const { username, comment, stars, productId } = req.body;
+        const product = productService.getById(productId);
+        const productComment = productService.getComments(productId);
+        const script = 'product.details.js';
+
+        if (!req.session.isConnected) {
+            res.render(`products/product-detail`, {err: 'Il faut avoir un compte pour laisser un commentaire.', product, productComment, script });
+            return;
+        }
+        
+        if (!stars) {
+            res.render(`products/product-detail`, { err: 'Il faut mettre une note svp.', product, productComment, script });
+            return;
+        }
+
+        if (!comment.trim()) {
+            res.render(`products/product-detail`, { err: 'Il faut mettre un commentaire svp.', product, productComment, script });
+            return;
+        }
+
+        productService.addComment(username, stars, comment, productId);
+        res.redirect(`/product-detail/${productId}`);
     }
     
 

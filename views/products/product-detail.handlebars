@@ -11,7 +11,7 @@
 
             <p>{{product.price}}€</p>
 
-            <form id="formCart" action="" method="post">
+            <form id="formCart" action="/cart/add" method="post">
                 <textarea name="id" id="productIdDetail">{{product.id}}</textarea>
                 <button id="addToCart"><img src="/images/panier.png">Ajouter au panier</button>
             </form>
@@ -30,19 +30,26 @@
         <div class="add-comment-container">
             <button id="showCommentForm">Ajouter un commentaire</button>
 
-            <form class="commentForm hidden" method="post">
+            <form class="commentForm hidden" action="/product/addComment" method="post">
                 <h2>Ajouter un commentaire</h2>
 
                 <div class="comment-input">
                     <label for="stars">Note</label>
-                    <select name="stars" id="stars"></select>
+                    <input type="number" name="stars" id="stars" max="5">
                 </div>
 
                 <div class="comment-input">
                     <label for="comment">Commentaire</label>
                     <textarea name="comment" id="comment"></textarea>
                 </div>
+
+                <input type="hidden" name="productId" value="{{product.id}}">
+                <input type="hidden" name="username" value="{{session.user.username}}">
+
+                <button>Ajouter le commentaire</button>
             </form>
+
+            <p>{{err}}</p>
         </div>
     </div>
 </section>

@@ -43,6 +43,19 @@ const productModel = {
     getComments: (id) => {
         const productComments = context.comments.filter(c => c.productId == id);
         return structuredClone(productComments);
+    },
+
+    addComment: (username, stars, comment, productId) => {
+        const newComment = {
+            username: username,
+            stars: stars,
+            comment: comment,
+            productId: productId
+        };
+
+        context.comments.push(newComment);
+
+        return productId;
     }
 
 }
