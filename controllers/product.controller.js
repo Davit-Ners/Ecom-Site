@@ -44,6 +44,10 @@ const productController = {
 
         productService.addComment(username, stars, comment, productId);
         res.redirect(`/product-detail/${productId}`);
+    },
+
+    addProductGET: (req, res) => {
+        res.render('products/addProduct');
     }
     
 
