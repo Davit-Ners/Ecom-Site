@@ -21,6 +21,9 @@
             <a href="/">A Propos</a>
             <a href="/contact">Contact</a>
             {{#if session.isConnected}}
+            {{#if session.isAdmin}}
+            <a href="/add">Ajouter un produit</a>
+            {{/if}}
             <a href="/logout">Se deconnecter</a>
             {{else}}
             <a href="/login">Se connecter</a>

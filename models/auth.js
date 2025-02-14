@@ -2,6 +2,7 @@ const context = {
     users: [
         {
             id: 1,
+            role: "admin",
             username: "Davit",
             email: "davit.ners02@gmail.com",
             password: 'test1234',
@@ -27,6 +28,7 @@ const authModel = {
     add: (username, email, password, firstname, lastname) => {
         const newUser = {
             id: context.nextId,
+            role: "member",
             username: username,
             email: email,
             password: password,

@@ -8,9 +8,9 @@ const homeController = {
      * @param {express.Response} res 
      */
     index: (req, res) => {
-        if (req.session.isConnected) console.log('OK');
+        if (req.session.isConnected) console.log("Role : ", req.session.user.role);
         if (!req.session.isConnected) console.log('KO');
-        console.log("Session : ", res.locals.session)
+        console.log("Session : ", res.locals.session);
         const dayProducts = productService.getRandomProduct(3);
         res.render('home/index', { dayProducts });
     },

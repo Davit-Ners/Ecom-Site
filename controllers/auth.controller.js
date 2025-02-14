@@ -27,9 +27,12 @@ const authController = {
         if (user != 1 && user != -1) {
             req.session.user = {
                 id: user.id,
-                username: username
+                username: username,
+                role: user.role
             };
             req.session.isConnected = true;
+
+            if (req.session.user.role === 'admin') req.session.isAdmin = true;
 
             res.redirect('/');
             return;
