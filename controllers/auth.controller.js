@@ -1,5 +1,6 @@
 import express from 'express';
 import authService from '../services/auth.service.js';
+import authModel from '../models/auth.js';
 const authController = {
 
     /**
@@ -20,7 +21,9 @@ const authController = {
 
         const user = authService.login(username, password);
 
-        if (user != 1 || user != -1) {
+        console.log(user);
+
+        if (user != 1 && user != -1) {
             req.session.user = {
                 id: user.id,
                 username
@@ -31,7 +34,7 @@ const authController = {
             return;
         }
         
-        res.render('/login');
+        res.render('auth/login', { err: 'Mauvaises données.' });
     },
 
     logout: (req, res) => {
@@ -41,6 +44,33 @@ const authController = {
 
     registerGET: (req, res) => {
         res.render('auth/register');
+    },
+
+    registerPOST: (req, res) => {
+        const { username, email, firstname, lastname, password, repeatPassword } = req.body;
+        if (password != repeatPassword) {
+            res.render('auth/register', { err: 'Les mot de passes ne correspondent pas.', infos: req.body })
+            return;
+        }
+
+        const newUser = authService.register(username, email, password, firstname, lastname);
+
+        if (newUser === 'email') {
+            res.render('auth/register', { err: 'Il existe déja un compte avec cet adresse e-mail.', infos: req.body })
+            return;
+        }
+
+        if (newUser === 'username') {
+            res.render('auth/register', { err: "Il existe déja un compte avec ce nom d'utilisateur.", infos: req.body })
+            return;
+        }
+
+        res.render('auth/login', { infos: username });
+    },
+
+    getAllADMIN: (req, res) => {
+        const users = authModel.getAll();
+        res.json(users);
     }
 
 

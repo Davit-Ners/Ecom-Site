@@ -4,15 +4,17 @@
         <form method="post">
             <div class="login-input">
                 <label for="login-username">Nom d'utilisateur</label>
-                <input type="text" id="login-username" name="username">
+                <input type="text" id="login-username" name="username" value="{{infos}}">
             </div>
 
             <div class="login-input">
                 <label for="login-password">Mot de passe</label>
-                <input type="text" id="login-password" name="password">
+                <input type="password" id="login-password" name="password">
             </div>
 
             <button>Se connecter</button>
         </form>
+
+        <p>{{err}}</p>
     </div>
 </section>

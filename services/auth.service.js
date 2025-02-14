@@ -10,6 +10,20 @@ const authService = {
             return 1;
         }
         return -1;
+    },
+
+    register: (username, email, password, firstname, lastname) => {
+
+        if (authModel.getByEmail(email)) {
+            return 'email';
+        }
+
+        if (authModel.getByUsername(username)) {
+            return 'username';
+        }
+        
+        const user = authModel.add(username.trim(), email.trim(), password, firstname.trim(), lastname.trim());
+        return user;
     }
 
 }

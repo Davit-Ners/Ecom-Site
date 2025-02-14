@@ -15,8 +15,33 @@ const context = {
 const authModel = {
 
     getByUsername: (username) => {
-        const user = context.users.find(u => u.username === username);
+        const user = context.users.find(u => u.username === username.trim());
         return structuredClone(user);
+    },
+
+    getByEmail: (email) => {
+        const user = context.users.find(u => u.email === email.trim());
+        return structuredClone(user);
+    },
+
+    add: (username, email, password, firstname, lastname) => {
+        const newUser = {
+            id: context.nextId,
+            username: username,
+            email: email,
+            password: password,
+            firstname: firstname,
+            lastname: lastname
+        }
+
+        context.users.push(newUser);
+        context.nextId++;
+
+        return newUser;
+    },
+
+    getAll: () => {
+        return structuredClone(context.users);
     }
 
 }
