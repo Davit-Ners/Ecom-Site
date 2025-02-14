@@ -9,7 +9,8 @@ const authController = {
      * @param {express.Response} res 
      */
     loginGET: (req, res) => {
-        res.render('auth/login');
+        const username = req.query.username;
+        res.render('auth/login', { username: username });
     },
 
     loginPOST: (req, res) => {
@@ -65,7 +66,7 @@ const authController = {
             return;
         }
 
-        res.render('auth/login', { infos: username });
+        res.redirect('/login?username='+ username);
     },
 
     getAllADMIN: (req, res) => {
