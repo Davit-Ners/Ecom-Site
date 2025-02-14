@@ -14,7 +14,10 @@ const context = {
 
 const authModel = {
 
-    
+    getByUsername: (username) => {
+        const user = context.users.find(u => u.username === username);
+        return structuredClone(user);
+    }
 
 }
 

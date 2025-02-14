@@ -19,8 +19,12 @@
             <a href="/product">Produits</a>
             <a href="/">A Propos</a>
             <a href="/contact">Contact</a>
+            {{#if session.isConnected}}
+            <a href="/logout">Se deconnecter</a>
+            {{else}}
             <a href="/login">Se connecter</a>
             <a href="/register">S'inscrire</a>
+            {{/if}}
             <a href="/panier"><img src="/images/panier.png" alt="Image of cart"></a>
         </nav>
     </header>
