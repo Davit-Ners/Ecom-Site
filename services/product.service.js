@@ -3,18 +3,18 @@ import productModel from "../models/product.js"
 
 const productService = {
 
-    getAll: () => {
-        const product = productModel.getAll();
+    getAll: async () => {
+        const product = await productModel.getAll();
         return product;
     },
 
-    getRandomProduct: (nb) => {
-        const products = productModel.getRandomProduct(nb);
+    getRandomProduct: async (nb) => {
+        const products = await productModel.getRandomProduct(nb);
         return products;
     },
 
-    getById: (id) => {
-        const product = productModel.getById(id);
+    getById: async (id) => {
+        const product = await productModel.getById(id);
         return product;
     },
 

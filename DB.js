@@ -1,7 +1,7 @@
 import pg from 'pg';
-const { Client } = pg;
+const { Pool } = pg;
 
-const client = new Client({
+const pool = new Pool({
     host: process.env.PGHOST,
     port: process.env.PGPORT,
     user: process.env.PGUSER,
@@ -9,4 +9,4 @@ const client = new Client({
     database: process.env.PGDATABASE
 });
 
-export default client;
+export default pool;

@@ -28,11 +28,11 @@ const cartModel = {
         return product;
     },
 
-    add: (productId) => {
+    add: async (productId) => {
         const product = cartModel.getById(productId);
         if (product) product.count++;
         else {
-            const cartProduct = productModel.getById(productId);
+            const cartProduct = await productModel.getById(productId);
             cartProduct.count = 1;
             context.cart.push(cartProduct);
             return cartProduct;

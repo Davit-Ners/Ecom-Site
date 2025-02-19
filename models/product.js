@@ -1,5 +1,6 @@
 import data from '../data.json' with { type: 'json' };
 import comments from '../comment.json' with { type: 'json' };
+import pool from '../DB.js';
 
 const context = {
     products: data.products,
@@ -9,13 +10,24 @@ const context = {
 
 const productModel = {
     
-    getAll: () => {
-        return structuredClone(context.products);
+    getAll: async () => {
+        try {
+            const products = await pool.query('SELECT * FROM product');
+            return products.rows;
+        }
+        catch (err) {
+            throw err;
+        }
     },
 
-    getById: (id) => {
-        const product = context.products.find(p => p.id == id);
-        return structuredClone(product);
+    getById: async (id) => {
+        try {
+            const product = await pool.query('SELECT * FROM product WHERE id = $1', [id]);
+            return product.rows[0];
+        }
+        catch (err) {
+            throw err;
+        }
     },
 
     add: () => {
@@ -30,14 +42,14 @@ const productModel = {
 
     },
 
-    getRandomProduct: (nb) => {
-        const newData = [];
-        for (let i = 0; i < nb; i++) {
-            const random = Math.floor(Math.random() * context.products.length);
-            if (newData.includes(data.products[random])) i--;
-            else {newData.push(data.products[random]);}
+    getRandomProduct: async (nb) => {
+        try {
+            const products = await pool.query('SELECT * FROM product ORDER BY RANDOM() LIMIT $1', [nb]);
+            return products.rows;
         }
-        return newData;
+        catch (err) {
+            throw err;
+        }
     },
 
     getComments: (id) => {

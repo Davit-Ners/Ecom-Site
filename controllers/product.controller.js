@@ -8,14 +8,15 @@ const productController = {
      * @param {express.Request} req 
      * @param {express.Response} res 
      */
-    index: (req, res) => {
-        const products = productService.getAll();
+    index: async (req, res) => {
+        const products = await productService.getAll();
         res.render('products/product', { products });
     },
 
-    details: (req, res) => {
+    details: async (req, res) => {
         const id = req.params.id;
-        const product = productService.getById(id);
+        const product = await productService.getById(id);
+        console.log(product);
         const productComment = productService.getComments(id);
         const script = 'product.details.js';
         res.render('products/product-detail', { product, productComment, script });
