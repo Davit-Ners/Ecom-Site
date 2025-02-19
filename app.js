@@ -8,6 +8,7 @@ import productRouter from './routers/products.router.js';
 import contactRouter from './routers/contact.router.js';
 import cartRouter from './routers/cart.router.js';
 import authRouter from './routers/auth.router.js';
+import db from './DB.js';
 
 const app = express();
 const {NODE_ENV, PORT, SESSION_SECRET} = process.env;
