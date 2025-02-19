@@ -52,9 +52,9 @@ const productModel = {
         }
     },
 
-    getComments: (id) => {
-        const productComments = context.comments.filter(c => c.productId == id);
-        return structuredClone(productComments);
+    getComments: async (id) => {
+        const productComments = await pool.query('SELECT * FROM comments WHERE product_id = $1', [id]);
+        return productComments.rows;
     },
 
     addComment: (username, stars, comment, productId) => {

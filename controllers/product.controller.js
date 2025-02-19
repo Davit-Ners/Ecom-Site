@@ -16,8 +16,7 @@ const productController = {
     details: async (req, res) => {
         const id = req.params.id;
         const product = await productService.getById(id);
-        console.log(product);
-        const productComment = productService.getComments(id);
+        const productComment = await productService.getComments(id);
         const script = 'product.details.js';
         res.render('products/product-detail', { product, productComment, script });
     },

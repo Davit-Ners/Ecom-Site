@@ -3,8 +3,8 @@ import authModel from "../models/auth.js"
 
 const authService = {
 
-    login: (username, password) => {
-        const user = authModel.getByUsername(username);
+    login: async (username, password) => {
+        const user = await authModel.getByUsername(username);
         if (user) {
             if (user.password === password) return user;
             return 1;
@@ -12,17 +12,17 @@ const authService = {
         return -1;
     },
 
-    register: (username, email, password, firstname, lastname) => {
+    register: async (username, email, password, firstname, lastname) => {
 
-        if (authModel.getByEmail(email)) {
+        if (await authModel.getByEmail(email)) {
             return 'email';
         }
 
-        if (authModel.getByUsername(username)) {
+        if (await authModel.getByUsername(username)) {
             return 'username';
         }
         
-        const user = authModel.add(username.trim(), email.trim(), password, firstname.trim(), lastname.trim());
+        const user = await authModel.add(username.trim(), email.trim(), password, firstname.trim(), lastname.trim());
         return user;
     }
 

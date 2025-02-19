@@ -13,14 +13,14 @@ const authController = {
         res.render('auth/login', { username: username });
     },
 
-    loginPOST: (req, res) => {
+    loginPOST: async (req, res) => {
         const { username, password } = req.body;
         if (!username || !password) {
             res.redirect('/login');
             return;
         }
 
-        const user = authService.login(username, password);
+        const user = await authService.login(username, password);
 
         console.log(user);
 
@@ -50,14 +50,14 @@ const authController = {
         res.render('auth/register');
     },
 
-    registerPOST: (req, res) => {
+    registerPOST: async (req, res) => {
         const { username, email, firstname, lastname, password, repeatPassword } = req.body;
         if (password != repeatPassword) {
             res.render('auth/register', { err: 'Les mot de passes ne correspondent pas.', infos: req.body })
             return;
         }
 
-        const newUser = authService.register(username, email, password, firstname, lastname);
+        const newUser = await authService.register(username, email, password, firstname, lastname);
 
         if (newUser === 'email') {
             res.render('auth/register', { err: 'Il existe déja un compte avec cet adresse e-mail.', infos: req.body })
@@ -72,8 +72,8 @@ const authController = {
         res.redirect('/login?username='+ username);
     },
 
-    getAllADMIN: (req, res) => {
-        const users = authModel.getAll();
+    getAllADMIN: async (req, res) => {
+        const users = await authModel.getAll();
         res.json(users);
     }
 

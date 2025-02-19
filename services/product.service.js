@@ -18,8 +18,8 @@ const productService = {
         return product;
     },
 
-    getComments: (id) => {
-        const comments = productModel.getComments(id);
+    getComments: async (id) => {
+        const comments = await productModel.getComments(id);
         return comments;
     },
 

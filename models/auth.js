@@ -1,3 +1,5 @@
+import pool from "../DB.js";
+
 const context = {
     users: [
         {
@@ -15,17 +17,17 @@ const context = {
 
 const authModel = {
 
-    getByUsername: (username) => {
-        const user = context.users.find(u => u.username === username.trim());
-        return structuredClone(user);
+    getByUsername: async (username) => {
+        const user = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
+        return user.rows[0] || undefined;
     },
 
-    getByEmail: (email) => {
-        const user = context.users.find(u => u.email === email.trim());
-        return structuredClone(user);
+    getByEmail: async (email) => {
+        const user = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+        return user.rows[0] || undefined;
     },
 
-    add: (username, email, password, firstname, lastname) => {
+    add: async (username, email, password, firstname, lastname) => {
         const newUser = {
             id: context.nextId,
             role: "member",
@@ -36,14 +38,16 @@ const authModel = {
             lastname: lastname
         }
 
-        context.users.push(newUser);
-        context.nextId++;
+        pool.query(`INSERT INTO users (role, username, email, password, firstname, lastname) VALUES ('member', $1, $2, $3, $4, $5)`,
+                  [username, email, password, firstname, lastname]
+        );
 
         return newUser;
     },
 
-    getAll: () => {
-        return structuredClone(context.users);
+    getAll: async () => {
+        const users = await pool.query('SELECT * FROM users');
+        return users.rows;
     }
 
 }
