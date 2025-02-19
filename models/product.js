@@ -57,15 +57,10 @@ const productModel = {
         return productComments.rows;
     },
 
-    addComment: (username, stars, comment, productId) => {
-        const newComment = {
-            username: username,
-            stars: stars,
-            comment: comment,
-            productId: productId
-        };
-
-        context.comments.push(newComment);
+    addComment: async (username, stars, comment, productId) => {
+        pool.query('INSERT INTO comments (username, stars, comment, product_id) VALUES ($1, $2, $3, $4)',
+                  [username, stars, comment, productId]
+        );
 
         return productId;
     }

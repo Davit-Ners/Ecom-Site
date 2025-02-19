@@ -21,10 +21,10 @@ const productController = {
         res.render('products/product-detail', { product, productComment, script });
     },
 
-    addComment: (req, res) => {
+    addComment: async (req, res) => {
         const { username, comment, stars, productId } = req.body;
-        const product = productService.getById(productId);
-        const productComment = productService.getComments(productId);
+        const product = await productService.getById(productId);
+        const productComment = await productService.getComments(productId);
         const script = 'product.details.js';
 
         if (!req.session.isConnected) {
@@ -42,7 +42,7 @@ const productController = {
             return;
         }
 
-        productService.addComment(username, stars, comment, productId);
+        await productService.addComment(username, stars, comment, productId);
         res.redirect(`/product-detail/${productId}`);
     },
 
