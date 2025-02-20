@@ -9,6 +9,7 @@ const cartService = {
 
     getTotalPrice: async (userId) => {
         const totalPrice = Math.round(await cartModel.getTotalPrice(userId)*100) / 100;
+        if (totalPrice == 0) return false;
         return totalPrice.toFixed(2);
     },
 

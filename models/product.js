@@ -40,6 +40,23 @@ const productModel = {
         }
     },
 
+    getByPrice: async (orderDir) => {
+        try {
+            let products;
+            if (orderDir === 'ASC') {
+                products  = await pool.query('SELECT * FROM product ORDER BY price ASC');
+            }
+            else {
+                products  = await pool.query('SELECT * FROM product ORDER BY price DESC');
+            }
+
+            return products.rows;
+        }
+        catch (err) {
+            throw err;
+        }
+    },
+
     add: () => {
 
     },

@@ -16,6 +16,16 @@
                 <button>Appliquer le filtre</button>
             </form>
         </div>
+        <div class="filtre">
+            <h4>Prix</h4>
+            <form action="/product/filterPrice" method="post">
+                <select name="priceFilter" id="price-filter">
+                    <option value="ASC">Croissant</option>
+                    <option value="DESC">Decroissant</option>
+                </select>
+                <button>Appliquer le filtre</button>
+            </form>
+        </div>
     </div>
     <div class="product-page-container">
         {{#each products}}

@@ -8,5 +8,6 @@ productRouter.get('/product-detail/:id', productController.details);
 productRouter.post('/product/addComment', productController.addComment);
 productRouter.get('/product/addProduct', productController.addProductGET);
 productRouter.post('/product/filterCategory', productController.filterByCategory);
+productRouter.post('/product/filterPrice', productController.filterByPrice);
 
 export default productRouter;

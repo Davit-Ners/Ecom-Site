@@ -18,6 +18,11 @@ const productController = {
         res.render('products/product', { products });
     },
 
+    filterByPrice: async (req, res) => {
+        const products = await productService.getByPrice(req.body.priceFilter);
+        res.render('products/product', { products });
+    },
+
     details: async (req, res) => {
         const id = req.params.id;
         const product = await productService.getById(id);

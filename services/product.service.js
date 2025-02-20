@@ -23,6 +23,11 @@ const productService = {
         return products;
     },
 
+    getByPrice: async (orderDir) => {
+        const products = await productModel.getByPrice(orderDir);
+        return products;
+    },
+
     getComments: async (id) => {
         const comments = await productModel.getComments(id);
         return comments;
