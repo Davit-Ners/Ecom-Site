@@ -2,7 +2,7 @@ import authModel from "../models/auth.js"
 import bcrypt from 'bcrypt';
 
 async function hashPassword(password) {
-    const saltRounds = 10;
+    const saltRounds = 12;
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
     return hashedPassword;
