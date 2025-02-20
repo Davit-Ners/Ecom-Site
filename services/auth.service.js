@@ -1,12 +1,20 @@
 import authModel from "../models/auth.js"
+import bcrypt from 'bcrypt';
 
+async function hashPassword(password) {
+    const saltRounds = 10;
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    return hashedPassword;
+}
 
 const authService = {
 
     login: async (username, password) => {
         const user = await authModel.getByUsername(username);
         if (user) {
-            if (user.password === password) return user;
+            const verifyPassword = await bcrypt.compare(password, user.password);
+            if (verifyPassword) return user;
             return 1;
         }
         return -1;
@@ -21,8 +29,10 @@ const authService = {
         if (await authModel.getByUsername(username)) {
             return 'username';
         }
+
+        const hashedPassword = await hashPassword(password);
         
-        const user = await authModel.add(username.trim(), email.trim(), password, firstname.trim(), lastname.trim());
+        const user = await authModel.add(username.trim(), email.trim(), hashedPassword, firstname.trim(), lastname.trim());
         return user;
     }
 
