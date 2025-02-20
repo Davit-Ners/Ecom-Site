@@ -10,7 +10,6 @@ const homeController = {
     index: async (req, res) => {
         if (req.session.isConnected) console.log("Role : ", req.session.user.role);
         if (!req.session.isConnected) console.log('KO');
-        console.log("Session : ", res.locals.session);
         const dayProducts = await productService.getRandomProduct(3);
         res.render('home/index', { dayProducts });
     },

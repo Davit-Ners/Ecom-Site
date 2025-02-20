@@ -2,18 +2,30 @@ import cartModel from "../models/cart.js"
 
 const cartService = {
 
-    getAll: () => {
-        const cart = cartModel.getAll();
-        return structuredClone(cart);
+    getAll: async (userId) => {
+        const cart = await cartModel.getAll(userId);
+        return cart;
     },
 
-    getTotalPrice: () => {
-        const totalPrice = Math.round(cartModel.getTotalPrice()*100) / 100;
-        return totalPrice;
+    getTotalPrice: async (userId) => {
+        const totalPrice = Math.round(await cartModel.getTotalPrice(userId)*100) / 100;
+        return totalPrice.toFixed(2);
     },
 
-    add: (productId) => {
-        const newProduct = cartModel.add(productId);
+    add: async (productId, userId) => {
+        await cartModel.add(productId, userId);
+    },
+
+    delete: async (cartId) => {
+        await cartModel.delete(cartId);
+    },
+
+    addCount: async (cartId) => {
+        await cartModel.addCount(cartId);
+    },
+
+    removeCount: async (cartId) => {
+        await cartModel.removeCount(cartId);
     }
     
 }
