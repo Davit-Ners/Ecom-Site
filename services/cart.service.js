@@ -14,6 +14,10 @@ const cartService = {
 
     add: async (productId, userId) => {
         await cartModel.add(productId, userId);
+    },
+
+    delete: async (cartId) => {
+        await cartModel.delete(cartId);
     }
     
 }

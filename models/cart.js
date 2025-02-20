@@ -10,7 +10,7 @@ const cartModel = {
 
     getAll: async (userId) => {
         const cart = await pool.query(`
-                SELECT p.id, p.name, p.price, p.soldedprice, p.description, p.image, p.category, c.product_count
+                SELECT p.id, p.name, p.price, p.soldedprice, p.description, p.image, p.category, c.product_count, c.id AS cart_id
                 FROM cart c
                 JOIN product p on p.id = product_id
                 WHERE user_id = $1
@@ -55,6 +55,15 @@ const cartModel = {
                     INSERT INTO cart (product_id, user_id, product_count)
                     VALUES ($1, $2, 1)
                 `, [productId, userId]);
+        }
+    },
+
+    delete: async (cartId) => {
+        try {
+            await pool.query(`DELETE FROM cart WHERE id = $1`, [cartId]);
+        }
+        catch (err) {
+            throw err;
         }
     }
 

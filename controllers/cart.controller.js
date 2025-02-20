@@ -22,6 +22,12 @@ const cartController = {
         const id = req.body.id;
         await cartService.add(id, req.session.user.id);
         res.redirect('/panier');
+    },
+
+    delete: async (req, res) => {
+        const cartId = req.body.cartId;
+        await cartService.delete(cartId);
+        res.redirect('/panier');
     }
 
 

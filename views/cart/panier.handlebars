@@ -13,7 +13,10 @@
                     <p>{{this.price}}€</p>
                     <p>x{{this.product_count}}</p>
                 </div>
-                <button>Retirer du panier</button>
+                <form action="/panier/removeProduct" method="post">
+                <input type="hidden" name="cartId" value="{{this.cart_id}}">
+                    <button>Retirer du panier</button>
+                </form>
             </div>
             {{/each}}
             <p class="totalPrice">Total: {{totalPrice}}€</p>
