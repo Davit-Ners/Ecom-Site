@@ -1,0 +1,55 @@
+<section class="detail-page">
+    <div class="product-container">
+        <div class="product-detail" id="product-detail-{{product.id}}">
+            <h2>{{product.name}}</h2>
+
+            <div class="image-detail">
+                <img src="/{{product.image}}" alt="">
+            </div>
+
+            <p>{{product.description}}</p>
+
+            <p>{{product.price}}€</p>
+
+            <form id="formCart" action="/cart/add" method="post">
+                <textarea name="id" id="productIdDetail">{{product.id}}</textarea>
+                <button id="addToCart"><img src="/images/panier.png">Ajouter au panier</button>
+            </form>
+        </div>
+
+        <div class="comments-container">
+            {{#each productComment}}
+            <div class="comment">
+                <h2>Avis de {{this.username}}</h2>
+                <h3>{{this.stars}}</h3>
+                <p>"{{this.comment}}"</p>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="add-comment-container">
+            <button id="showCommentForm">Ajouter un commentaire</button>
+
+            <form class="commentForm hidden" action="/product/addComment" method="post">
+                <h2>Ajouter un commentaire</h2>
+
+                <div class="comment-input">
+                    <label for="stars">Note</label>
+                    <input type="number" name="stars" id="stars" max="5">
+                </div>
+
+                <div class="comment-input">
+                    <label for="comment">Commentaire</label>
+                    <textarea name="comment" id="comment"></textarea>
+                </div>
+
+                <input type="hidden" name="productId" value="{{product.id}}">
+                <input type="hidden" name="username" value="{{session.user.username}}">
+
+                <button>Ajouter le commentaire</button>
+            </form>
+
+            <p>{{err}}</p>
+        </div>
+    </div>
+</section>

@@ -44,7 +44,7 @@ function getTotaPrice(panier) {
         totalPrice += Number(product.price);
     }
 
-    return totalPrice;
+    return Math.round(totalPrice * 100) / 100;
 }
 
 

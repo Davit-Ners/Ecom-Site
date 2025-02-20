@@ -1,0 +1,41 @@
+<section class="register-section">
+    <div class="register-container">
+        <h1>S'inscrire</h1>
+
+        <form method="post">
+            <div class="login-input">
+                <label for="register-username">Nom d'utilisateur *</label>
+                <input id="register-username" name="username" type="text" value="{{infos.username}}">
+            </div>
+
+            <div class="login-input">
+                <label for="register-email">Adresse e-mail *</label>
+                <input id="register-email" name="email" type="email" value="{{infos.email}}">
+            </div>
+
+            <div class="login-input">
+                <label for="register-firstname">Nom</label>
+                <input id="register-firstname" name="firstname" type="text" value="{{infos.firstname}}">
+            </div>
+
+            <div class="login-input">
+                <label for="register-lastname">Prenom</label>
+                <input id="register-lastname" name="lastname" type="text" value="{{infos.lastname}}">
+            </div>
+
+            <div class="login-input">
+                <label for="register-password">Mot de passe *</label>
+                <input id="register-password" name="password" type="password">
+            </div>
+
+            <div class="login-input">
+                <label for="register-repeatPassword">Repeter le mot de passe *</label>
+                <input id="register-repeatPassword" name="repeatPassword" type="password">
+            </div>
+
+            <button>S'inscrire</button>
+        </form>
+
+        <p>{{err}}</p>
+    </div>
+</section>
