@@ -14,9 +14,16 @@
                     <div class="count">
                         <p>Quantité : </p>
                         <div class="count-btn">
-                            <button>-</button>
+                            <form action="/panier/removeCount" method="post">
+                                <button>-</button>
+                                <input type="hidden" name="cartId" value="{{this.cart_id}}">
+                                <input type="hidden" name="productCount" value="{{this.product_count}}">
+                            </form>
                             <p>{{this.product_count}}</p>
-                            <button>+</button>
+                            <form action="/panier/addCount" method="post">
+                                <button>+</button>
+                                <input type="hidden" name="cartId" value="{{this.cart_id}}">
+                            </form>
                         </div>
                     </div>
                 </div>

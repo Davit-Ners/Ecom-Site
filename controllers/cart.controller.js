@@ -28,6 +28,21 @@ const cartController = {
         const cartId = req.body.cartId;
         await cartService.delete(cartId);
         res.redirect('/panier');
+    },
+
+    addCount: async (req, res) => {
+        const cartId = req.body.cartId;
+        await cartService.addCount(cartId);
+        res.redirect('/panier')
+    },
+
+    removeCount: async (req, res) => {
+        const { cartId, productCount } = req.body;
+        if (parseInt(productCount) > 1) {
+            await cartService.removeCount(cartId);
+        }
+
+        res.redirect('/panier')
     }
 
 

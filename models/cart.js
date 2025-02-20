@@ -14,6 +14,7 @@ const cartModel = {
                 FROM cart c
                 JOIN product p on p.id = product_id
                 WHERE user_id = $1
+                ORDER BY c.id ASC
             `, [userId]);
         return cart.rows;
     },

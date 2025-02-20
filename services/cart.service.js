@@ -9,7 +9,7 @@ const cartService = {
 
     getTotalPrice: async (userId) => {
         const totalPrice = Math.round(await cartModel.getTotalPrice(userId)*100) / 100;
-        return totalPrice;
+        return totalPrice.toFixed(2);
     },
 
     add: async (productId, userId) => {
