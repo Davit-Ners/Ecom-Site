@@ -13,6 +13,11 @@ const productController = {
         res.render('products/product', { products });
     },
 
+    filterByCategory: async (req, res) => {
+        const products = await productService.getByCategory(req.body.categoryFilter);
+        res.render('products/product', { products });
+    },
+
     details: async (req, res) => {
         const id = req.params.id;
         const product = await productService.getById(id);

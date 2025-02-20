@@ -19,9 +19,13 @@ const cartController = {
     },
 
     addPOST: async (req, res) => {
-        const id = req.body.id;
-        await cartService.add(id, req.session.user.id);
-        res.redirect('/panier');
+        if (req.session.isConnected) {
+            const id = req.body.id;
+            await cartService.add(id, req.session.user.id);
+            res.redirect('/panier');
+            return;
+        }
+        res.redirect('/login');
     },
 
     delete: async (req, res) => {

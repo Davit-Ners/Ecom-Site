@@ -1,4 +1,22 @@
 <section class="product-page">
+    <div class="filtre-container">
+        <h3>Filtrer par : </h3>
+        <div class="filtre">
+            <h4>Categorie</h4>
+            <form action="/product/filterCategory" method="post">
+                <select name="categoryFilter" id="category-filter">
+                    <option value="Audio">Audio</option>
+                    <option value="Wearable">Wearable</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Informatique">Informatique</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Accessoires">Accessoires</option>
+                    <option value="Domotique">Domotique</option>
+                </select>
+                <button>Appliquer le filtre</button>
+            </form>
+        </div>
+    </div>
     <div class="product-page-container">
         {{#each products}}
             <div class="product-card">

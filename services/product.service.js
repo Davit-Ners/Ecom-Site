@@ -18,6 +18,11 @@ const productService = {
         return product;
     },
 
+    getByCategory: async (category) => {
+        const products = await productModel.getByCategory(category);
+        return products;
+    },
+
     getComments: async (id) => {
         const comments = await productModel.getComments(id);
         return comments;

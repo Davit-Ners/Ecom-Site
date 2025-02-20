@@ -30,6 +30,16 @@ const productModel = {
         }
     },
 
+    getByCategory: async (category) => {
+        try {
+            const products = await pool.query('SELECT * FROM product WHERE category = $1', [category]);
+            return products.rows;
+        }
+        catch (err) {
+            throw err;
+        }
+    },
+
     add: () => {
 
     },
