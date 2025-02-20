@@ -6,7 +6,9 @@ const pool = new Pool({
     port: process.env.PGPORT,
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE
+    database: process.env.PGDATABASE,
+    connectionTimeoutMillis: 15_000,
+    max: 25
 });
 
 export default pool;
