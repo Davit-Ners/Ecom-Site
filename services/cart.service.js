@@ -18,6 +18,14 @@ const cartService = {
 
     delete: async (cartId) => {
         await cartModel.delete(cartId);
+    },
+
+    addCount: async (cartId) => {
+        await cartModel.addCount(cartId);
+    },
+
+    removeCount: async (cartId) => {
+        await cartModel.removeCount(cartId);
     }
     
 }

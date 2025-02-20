@@ -65,6 +65,28 @@ const cartModel = {
         catch (err) {
             throw err;
         }
+    },
+
+    addCount: async (cartId) => {
+        await pool.query(`
+            UPDATE cart SET product_count = (
+                SELECT product_count
+                FROM cart
+                WHERE id = $1
+            ) + 1
+            WHERE id = $2
+            `, [cartId, cartId]);
+    },
+
+    removeCount: async (cartId) => {
+        await pool.query(`
+            UPDATE cart SET product_count = (
+                SELECT product_count
+                FROM cart
+                WHERE id = $1
+            ) - 1
+            WHERE id = $2
+            `, [cartId, cartId]);
     }
 
 }

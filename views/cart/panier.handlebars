@@ -11,11 +11,18 @@
                 <div class="cart-card-detail">
                     <h3>{{this.name}}</h3>
                     <p>{{this.price}}€</p>
-                    <p>x{{this.product_count}}</p>
+                    <div class="count">
+                        <p>Quantité : </p>
+                        <div class="count-btn">
+                            <button>-</button>
+                            <p>{{this.product_count}}</p>
+                            <button>+</button>
+                        </div>
+                    </div>
                 </div>
                 <form action="/panier/removeProduct" method="post">
                 <input type="hidden" name="cartId" value="{{this.cart_id}}">
-                    <button>Retirer du panier</button>
+                    <button class="remove-button">Retirer du panier</button>
                 </form>
             </div>
             {{/each}}
