@@ -17,6 +17,10 @@ const messagesController = {
         const messages = await messageService.getAll();
         console.log(messages);
         res.render('messages/index', { messages });
+    },
+
+    detail: async (req, res) => {
+        res.render('messages/detail');
     }
 
 

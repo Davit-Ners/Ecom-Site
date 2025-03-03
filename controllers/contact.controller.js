@@ -1,5 +1,6 @@
 import express from 'express';
 import sendEmail from '../models/nodemailer.model.js';
+import messagesModel from '../models/messages.js';
 const contactController = {
 
     /**
@@ -13,13 +14,14 @@ const contactController = {
 
     confirmMail: async (req, res) => {
         try {
-            const { email, username, categorie, message } = req.body;
-            if (!email || !categorie || !message) {
+            const { userEmail, username, category, message, title } = req.body;
+            if (!userEmail || !category || !message || !title) {
                 res.redirect('/contact');
                 return;
             }
-            console.log(email, username, categorie, message);
+            const data = { message, userEmail, category, title };
             // const info = await sendEmail(email);
+            messagesModel.add(data);
             res.render('contact/confirmation');
         } catch (error) {
             res.status(500).json({ message: 'Erreur lors de l\'envoi du mail', error: error.message });

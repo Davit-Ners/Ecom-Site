@@ -24,7 +24,7 @@
 .message-card-layout,
 .message-card {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
     gap: 1rem;
     align-items: center;
     padding: 1rem;
@@ -42,12 +42,20 @@
 .message-card {
     background: white;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-}
-
-.message-card:hover {
-    transform: scale(1.02);
-    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+    button {
+        border: 2px solid #000000;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+        background-color: #c1c9d1;
+        color: #292c2c;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: snow;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
 }
 
 .message-card h2 {
@@ -56,7 +64,6 @@
     text-align: center;
 }
 
-/* Styliser l'état du message */
 .message-card h2:last-child {
     font-weight: bold;
     padding: 0.4rem 0.8rem;

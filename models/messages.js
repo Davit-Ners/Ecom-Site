@@ -10,12 +10,20 @@ const messagesModel = {
     getTotalPrice: async (userId) => {
     },
 
-    getById: async (productId, userId) => {
+    getById: async (id) => {
     },
 
-    delete: async (cartId) => {
+    add: async ({message, userEmail, category, title}) => {
+        const date = new Date().toLocaleString().split(' ')[0];
+        await pool.query(`
+                INSERT INTO messages ("content", "userEmail", "receivedDate", "category", "title") 
+                VALUES ($1, $2, $3, $4, $5)
+            `, [message, userEmail, date, category, title]);
+    },
+
+    delete: async (messageId) => {
         try {
-            await pool.query(`DELETE FROM cart WHERE id = $1`, [cartId]);
+            await pool.query(`DELETE FROM messages WHERE id = $1`, [messageId]);
         }
         catch (err) {
             throw err;
