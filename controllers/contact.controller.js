@@ -13,9 +13,14 @@ const contactController = {
 
     confirmMail: async (req, res) => {
         try {
-            const email = req.body.email;
-            const info = await sendEmail(email);
-            res.json({ message: 'Email envoyé avec succès', info });
+            const { email, username, categorie, message } = req.body;
+            if (!email || !categorie || !message) {
+                res.redirect('/contact');
+                return;
+            }
+            console.log(email, username, categorie, message);
+            // const info = await sendEmail(email);
+            res.render('contact/confirmation');
         } catch (error) {
             res.status(500).json({ message: 'Erreur lors de l\'envoi du mail', error: error.message });
         }
