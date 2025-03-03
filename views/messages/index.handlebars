@@ -3,6 +3,7 @@
 
     <div class="message-container">
         <div class="message-card-layout">
+            <h2>Titre</h2>
             <h2>Categorie</h2>
             <h2>E-Mail de l'utilisateur</h2>
             <h2>Date de reception</h2>
@@ -10,6 +11,7 @@
         </div>
         {{#each messages}}
             <div class="message-card">
+                <h2>{{this.title}}</h2>
                 <h2>{{this.category}}</h2>
                 <h2>{{this.userEmail}}</h2>
                 <h2>{{this.receivedDate}}</h2>

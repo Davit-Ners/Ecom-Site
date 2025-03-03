@@ -24,7 +24,7 @@
 .message-card-layout,
 .message-card {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
     gap: 1rem;
     align-items: center;
     padding: 1rem;
