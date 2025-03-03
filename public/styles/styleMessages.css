@@ -1,0 +1,75 @@
+.adminMessages {
+    padding: 2rem;
+    max-width: 80%;
+    margin: auto;
+}
+
+.adminMessages h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-card-layout,
+.message-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.message-card-layout {
+    background: #c1c9d1;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.message-card {
+    background: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.message-card:hover {
+    transform: scale(1.02);
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.message-card h2 {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Styliser l'état du message */
+.message-card h2:last-child {
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.message-card h2:last-child:contains("Non lu") {
+    background: #ff4d4d;
+    color: white;
+}
+
+.message-card h2:last-child:contains("Lu") {
+    background: #4caf50;
+    color: white;
+}

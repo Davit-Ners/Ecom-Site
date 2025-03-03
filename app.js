@@ -8,6 +8,7 @@ import productRouter from './routers/products.router.js';
 import contactRouter from './routers/contact.router.js';
 import cartRouter from './routers/cart.router.js';
 import authRouter from './routers/auth.router.js';
+import messageRouter from './routers/messages.router.js';
 
 const app = express();
 const {NODE_ENV, PORT, SESSION_SECRET} = process.env;
@@ -36,6 +37,7 @@ app.use(productRouter);
 app.use(contactRouter);
 app.use(cartRouter);
 app.use(authRouter);
+app.use(messageRouter);
 
 // app.get('/', (req, res) => {
 //     const dayProducts = getRandomProduct(3, data);
