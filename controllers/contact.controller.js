@@ -13,10 +13,11 @@ const contactController = {
 
     confirmMail: async (req, res) => {
         try {
-            const info = await sendEmail('davit.ners02@gmail.com', 'Hello');
+            const email = req.body.email;
+            const info = await sendEmail(email);
             res.json({ message: 'Email envoyé avec succès', info });
         } catch (error) {
-            res.status(500).json({ message: 'Erreur lors de l’envoi du mail', error: error.message });
+            res.status(500).json({ message: 'Erreur lors de l\'envoi du mail', error: error.message });
         }
     }
 
