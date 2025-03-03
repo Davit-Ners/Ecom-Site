@@ -1,0 +1,112 @@
+.message-details-section {
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.user-message-details {
+    width: 50%;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    border-radius: 20px;
+    padding: 2.5em;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+}
+
+.user-message-details h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.user-message-details h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-message-details h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #444;
+    margin-top: 1em;
+}
+
+.user-message-details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    background: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Formulaire de réponse */
+.message-detail-reponse {
+    width: 50%;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    border-radius: 20px;
+    padding: 2.5em;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    text-align: center;
+}
+
+.message-detail-reponse h2 {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #292c2c;
+    background-color: #c1c9d1;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-detail-reponse textarea {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.05);
+    resize: none;
+    height: 150px;
+    transition: all 0.2s ease-in-out;
+}
+
+.message-detail-reponse textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #e45315;
+}
+
+.message-detail-reponse button {
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.8em 1.5em;
+    border-radius: 10px;
+    background-color: #c1c9d1;
+    color: #292c2c;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.message-detail-reponse button:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}

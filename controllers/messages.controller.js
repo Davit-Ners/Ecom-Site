@@ -20,7 +20,21 @@ const messagesController = {
     },
 
     detail: async (req, res) => {
-        res.render('messages/detail');
+        const id = parseInt(req.params.id);
+        if (!id || isNaN(id) || id < 1) {
+            res.json({err: "Not found"});
+            return;
+        }
+
+        const message = await messagesModel.getById(id);
+        console.log(message);
+        
+        if (!message) {
+            res.json({err: "Not found"});
+            return;
+        }
+
+        res.render('messages/detail', { message });
     }
 
 

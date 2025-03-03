@@ -11,6 +11,8 @@ const messagesModel = {
     },
 
     getById: async (id) => {
+        const message = await pool.query('SELECT * FROM messages WHERE id = $1', [id]);
+        return message.rows[0];
     },
 
     add: async ({message, userEmail, category, title}) => {
