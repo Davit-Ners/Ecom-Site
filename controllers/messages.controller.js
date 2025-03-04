@@ -27,7 +27,7 @@ const messagesController = {
             return;
         }
 
-        const message = await messagesModel.getById(id);
+        const message = await messageService.getById(id);
         console.log(message);
         
         if (!message) {
