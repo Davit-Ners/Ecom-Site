@@ -8,9 +8,9 @@
     }
 
     async function redirection() {
-        let timer = 5;
+        let timer = 3;
         message.textContent = `Votre formulaire a bien été envoyé, vous serez redirigé dans ${timer} secondes`;
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 3; i++) {
             await delay(1000);
             timer--;
             message.textContent = `Votre formulaire a bien été envoyé, vous serez redirigé dans ${timer} secondes`;

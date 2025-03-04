@@ -41,6 +41,11 @@ const messagesController = {
     responseToUserPOST: async (req, res) => {
         const id = parseInt(req.body.id);
         const { userEmail, message } = req.body;
+
+        if (!message.trim()) {
+            res.redirect(`/messages/${id}`);
+            return;
+        }
         
         if (!id || isNaN(id) || id < 1) {
             res.json({err: "Not found"});
