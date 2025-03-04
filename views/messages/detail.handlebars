@@ -13,7 +13,9 @@
     <div class="message-detail-reponse">
         <form action="" method="post">
             <h2>Votre réponse</h2>
-            <textarea name="response" id="response"></textarea>
+            <textarea name="message" id="response"></textarea>
+            <input type="hidden" name="userEmail" value="{{message.userEmail}}">
+            <input type="hidden" name="id" value="{{message.id}}">
             <button>Envoyer votre réponse</button>
         </form>
     </div>

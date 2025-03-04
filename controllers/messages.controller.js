@@ -1,6 +1,7 @@
 import express from 'express';
 import messagesModel from '../models/messages.js';
 import messageService from '../services/messages.service.js';
+import mailFunctions from '../models/nodemailer.model.js';
 const messagesController = {
 
     /**
@@ -37,7 +38,19 @@ const messagesController = {
         res.render('messages/detail', { message });
     },
 
-    
+    responseToUserPOST: async (req, res) => {
+        const id = parseInt(req.body.id);
+        const { userEmail, message } = req.body;
+        
+        if (!id || isNaN(id) || id < 1) {
+            res.json({err: "Not found"});
+            return;
+        }
+
+        const info = await mailFunctions.sendResponse(userEmail, message);
+
+        res.redirect('/messages');
+    }
 
 
 };
