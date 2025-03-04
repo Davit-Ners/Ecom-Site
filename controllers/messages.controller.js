@@ -50,6 +50,19 @@ const messagesController = {
         const info = await mailFunctions.sendResponse(userEmail, message);
 
         res.redirect('/messages');
+    },
+
+    delete: async (req, res) => {
+        const id = parseInt(req.body.id);
+        
+        if (!id || isNaN(id) || id < 1) {
+            res.json({err: "Not found"});
+            return;
+        }
+
+        messagesModel.delete(id);
+
+        res.redirect('/messages');
     }
 
 

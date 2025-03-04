@@ -9,6 +9,7 @@
             <h2>Date de reception</h2>
             <h2>Etat</h2>
             <h2>Lire</h2>
+            <h2>Supprimer</h2>
         </div>
         {{#each messages}}
             <div class="message-card">
@@ -18,6 +19,10 @@
                 <h2>{{this.receivedDate}}</h2>
                 <h2>{{this.etat}}</h2>
                 <h2><a href="/messages/{{this.id}}"><button>Lire le message</button></a></h2>
+                <h2><form action="/messagesDelete" method="post">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <button class="message-erase">Supprimer</button>
+                </form></h2>
             </div>
         {{/each}}
     </div>
