@@ -35,7 +35,9 @@ const messagesController = {
         }
 
         res.render('messages/detail', { message });
-    }
+    },
+
+    
 
 
 };

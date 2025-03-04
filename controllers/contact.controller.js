@@ -1,6 +1,6 @@
 import express from 'express';
-import sendEmail from '../models/nodemailer.model.js';
 import messagesModel from '../models/messages.js';
+import mailFunctions from '../models/nodemailer.model.js';
 const contactController = {
 
     /**
@@ -20,7 +20,7 @@ const contactController = {
                 return;
             }
             const data = { message, userEmail, category, title };
-            // const info = await sendEmail(email);
+            // const info = await mailFunctions.sendAutoEmail(userEmail);
             messagesModel.add(data);
             res.render('contact/confirmation');
         } catch (error) {
